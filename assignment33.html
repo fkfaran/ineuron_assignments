@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Design Exercises</title>
+<style>
+/* General */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* 1. Background image with cover layout */
+.bg-page {
+    background: url('background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* 2. Delete button */
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* 3. Back button in form */
+.back-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.back-btn:hover {
+    background-color: #2980b9;
+}
+
+/* 4. Payment page layout */
+.payment-page {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.payment-page h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+.payment-page input, .payment-page select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.payment-page .error {
+    color: #e67e22;
+    font-size: 0.9rem;
+}
+
+/* 5. Filter bar */
+.filter-bar {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    background-color: #ecf0f1;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+.filter-bar select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+}
+
+/* 6. Full-screen search page */
+.search-page {
+    background: url('search-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+.search-page input[type="text"] {
+    width: 50%;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+}
+
+/* 7. Full-screen video page */
+.video-page {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+.video-page video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.video-page .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+.video-page h1 {
+    font-size: 3rem;
+}
+.video-page h3 {
+    font-size: 1.5rem;
+}
+
+/* 8. Documentation page */
+.doc-page {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+.doc-page h2 {
+    color: #27ae60;
+}
+.doc-page ul {
+    line-height: 1.6;
+}
+.doc-page p.emoji {
+    font-size: 1.2rem;
+}
+
+/* 9. 404 page */
+.notfound-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f1c40f;
+    color: #2c3e50;
+}
+.notfound-page a {
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #e67e22;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* 10. Toast notification */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2980b9;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+<body>
+
+<!-- 1. Background page -->
+<div class="bg-page">
+    <h1>Welcome to Our Travel Site</h1>
+    <h3>Explore the world with us 🌍</h3>
+</div>
+
+<!-- 2. Delete button -->
+<div style="text-align:center; margin: 20px;">
+    <button class="delete-btn">Delete</button>
+</div>
+
+<!-- 3. Form with Back and Submit buttons -->
+<form style="max-width:400px;margin:auto; text-align:center;">
+    <button type="button" class="back-btn" onclick="history.back()">Back</button>
+    <input type="submit" value="Submit" style="padding:10px 20px; border-radius:5px; background:#27ae60; color:white; border:none;">
+</form>
+
+<!-- 4. Payment Page -->
+<div class="payment-page">
+    <h2>Payment</h2>
+    <label>Card Number</label>
+    <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX">
+    <label>Payment Method</label>
+    <select>
+        <option>Credit Card</option>
+        <option>Debit Card</option>
+        <option>UPI</option>
+        <option>Net Banking</option>
+        <option>Wallet</option>
+    </select>
+    <p class="error">Please fill all details to proceed 💳</p>
+    <input type="submit" value="Pay Now" style="background:#27ae60; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">
+</div>
+
+<!-- 5. Filter Bar -->
+<div class="filter-bar">
+    <select><option>Category</option><option>T-shirts</option><option>Shirts</option></select>
+    <select><option>Size</option><option>S</option><option>M</option><option>L</option></select>
+    <select><option>Color</option><option>Red</option><option>Blue</option><option>Black</option></select>
+    <select><option>Price</option><option>Low to High</option><option>High to Low</option></select>
+</div>
+
+<!-- 6. Full-screen search page -->
+<div class="search-page">
+    <input type="text" placeholder="Search for products... 🔍">
+</div>
+
+<!-- 7. Full-screen video page -->
+<div class="video-page">
+    <video autoplay muted loop>
+        <source src="promo.mp4" type="video/mp4">
+    </video>
+    <div class="overlay-text">
+        <h1>Our Adventure Awaits</h1>
+        <h3>Experience the thrill 🌄</h3>
+    </div>
+</div>
+
+<!-- 8. Documentation Page -->
+<div class="doc-page">
+    <h2>GitHub Project Documentation 📘</h2>
+    <ul>
+        <li>Clone the repository using: <code>git clone https://github.com/username/repo.git</code></li>
+        <li>Install dependencies using: <code>npm install</code> or <code>pip install -r requirements.txt</code></li>
+        <li>Run the application with <code>npm start</code> or <code>python app.py</code></li>
+        <li>Feedback 💬: Open an issue in the repo if you face any problem.</li>
+        <li>Support 🤝: We are happy to guide you via email or issue tracker.</li>
+    </ul>
+</div>
+
+<!-- 9. 404 Not Found Page -->
+<div class="notfound-page">
+    <h1>404 😔 Page Not Found</h1>
+    <p>Oops! The page you are looking for doesn’t exist. But don't worry, we have plenty more to explore!</p>
+    <a href="#">Home</a>
+    <a href="#">Contact</a>
+</div>
+
+<!-- 10. Toast Notification -->
+<div class="toast">
+    ⚠️ Oops! Some fields are empty. Please fill all required information before proceeding. We've got this! 😊
+</div>
+
+</body>
+</html>
